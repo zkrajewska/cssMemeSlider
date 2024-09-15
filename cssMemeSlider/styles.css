@@ -1,0 +1,172 @@
+body{
+    background-color: #444;
+}
+
+#slider {
+    margin: 0 auto;
+    width: 720px;
+    max-width: 100%;
+    
+}
+
+#slider input[type=radio] {
+    display: none;
+}
+
+#slider label {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#slides {
+    position: relative;
+    overflow: hidden; 
+    height: 480px;
+}
+
+#slide1:checked ~ #slides .inside {
+    margin-left: 0;
+}
+
+#slide2:checked ~ #slides .inside {
+    margin-left: -100%;
+}
+
+#slide3:checked ~ #slides .inside {
+    margin-left: -200%;
+}
+
+#slide4:checked ~ #slides .inside {
+    margin-left: -300%;
+}
+
+#slides .inside {
+    transition: margin-left 300ms cubic-bezier(0.77, 0, 0.175, 1);
+    width: 400%;
+    display: flex;
+}
+
+#slides .slide {
+    width: 25%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+img {
+    border-radius: 15px; 
+    width: 720px;
+    height: 480px;
+}
+
+#text-container {
+    position: relative;
+    left: 0;
+    bottom: 0; 
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    color: white; 
+    font-family: Arial, sans-serif; 
+    font-size: 16px;
+    text-align: left;
+    z-index: 3; 
+}
+
+.text {
+    display: none;
+}
+
+#slide1:checked ~ #text-container .slide1-text,
+#slide2:checked ~ #text-container .slide2-text,
+#slide3:checked ~ #text-container .slide3-text,
+#slide4:checked ~ #text-container .slide4-text {
+    display: block;
+}
+
+#controls {
+    margin: -180x 0 0 0;
+    width: 100%;
+    height: 50px;
+    z-index: 3;
+    position: relative;
+}
+
+#controls label {
+    transition: opacity 0.2s ease-out;
+    display: none;
+    width: 50px;
+    height: 50px;
+    opacity: 0.4;
+}
+
+#controls label:hover {
+    opacity: 1;
+ }
+ #slide1:checked ~ #controls label:nth-child(2),
+ #slide2:checked ~ #controls label:nth-child(3),
+ #slide3:checked ~ #controls label:nth-child(4),
+ #slide4:checked ~ #controls label:nth-child(1) {
+    background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
+    float:right;
+    margin: 0 -50px 0 0;
+    display: block;
+ }
+ #slide1:checked ~ #controls label:nth-last-child(2),
+ #slide2:checked ~ #controls label:nth-last-child(3),
+ #slide3:checked ~ #controls label:nth-last-child(4),
+ #slide4:checked ~ #controls label:nth-last-child(1) {
+    background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
+    float:left;
+    margin: 0 0 0 -50px;
+    display: block;
+ }
+ #bullets {
+   position: absolute; 
+    bottom: 120px; 
+    left: 70%; 
+    transform: translateX(-50%); 
+    text-align: center;
+    z-index: 3; 
+ }
+ #bullets label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: skyblue; 
+    margin: 0 10px;
+    border: 2px solid transparent; 
+    transition: background 0.3s, border 0.3s; 
+ }
+ #slide1:checked ~ #bullets label:nth-child(1),
+ #slide2:checked ~ #bullets label:nth-child(2),
+ #slide3:checked ~ #bullets label:nth-child(3),
+ #slide4:checked ~ #bullets label:nth-child(4) {
+    background: transparent; 
+    border: 2px solid skyblue; 
+ }
+
+ #bullets label:hover {
+    background: #fff; 
+    border: 2px solid transparent; 
+}
+
+ @media screen and (max-width: 900px) {
+    #slide1:checked ~ #controls label:nth-child(2),
+    #slide2:checked ~ #controls label:nth-child(3),
+    #slide3:checked ~ #controls label:nth-child(4),
+    #slide4:checked ~ #controls label:nth-child(1),
+    #slide1:checked ~ #controls label:nth-last-child(2),
+    #slide2:checked ~ #controls label:nth-last-child(3),
+    #slide3:checked ~ #controls label:nth-last-child(4),
+    #slide4:checked ~ #controls label:nth-last-child(1) {
+       margin: 0;
+    }
+    #slides {
+       max-width: calc(100% - 140px);
+       margin: 0 auto;
+    }
+ }

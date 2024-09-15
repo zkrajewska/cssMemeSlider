@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="slider">
@@ -12,6 +13,7 @@
         <input type="radio" name="slider" id="slide3">
         <input type="radio" name="slider" id="slide4">
         <div id="slides">
+            <div class="inside">
                 <div class="slide slide_1">
                     <div class="slide-meme">
                         <img src="meme1.jpg" alt="meme1">
@@ -32,12 +34,13 @@
                         <img src="meme4.jpg" alt="meme4">
                     </div>
                 </div>
+            </div>
         </div>
-        <div class="text">
-            <div class="slide text">Kazna pustejet milord...</div>
-            <div class="slide text">I'm a big dog in my soul...</div>
-            <div class="slide text">I'm stronger! I'm better! I'm smarter!</div>
-            <div class="slide text">Here we go again...</div>
+        <div id="text-container">
+            <div class="text slide1-text">Kazna pustejet milord...</div>
+            <div class="text slide2-text">I'm a big dog in my soul...</div>
+            <div class="text slide3-text">I'm stronger! I'm better! I'm smarter!</div>
+            <div class="text slide4-text">Here we go again...</div>
         </div>
         <div id="controls">
             <label for="slide1"></label>
